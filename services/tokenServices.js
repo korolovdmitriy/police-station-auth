@@ -12,18 +12,12 @@ class TokenServices {
     return { accessToken, refreshToken };
   }
 
-  async saveToken(userId, refreshToken) {
-    const tokenData = tokenModel.findTokenByUserId(userId);
+  async saveToken(id, refreshToken) {
+    const tokenData = tokenModel.findTokenByUserId(id);
     if (tokenData) {
-      tokenModel
-        .resaveUserToken(userId, refreshToken)
-        .then(() => res.status(200).json("The user token was resave"))
-        .catch((error) => res.status(404).send(error));
+      tokenModel.resaveUserToken(id, refreshToken);
     }
-    tokenModel
-      .saveUserToken(userId, refreshToken)
-      .then(() => res.status(200).json("The user token was save"))
-      .catch((error) => res.status(404).send(error));
+    tokenModel.saveUserToken(id, refreshToken);
   }
 }
 

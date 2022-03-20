@@ -1,12 +1,15 @@
-const model = require("../models/policeUserModel");
 const userServices = require("../services/userServices");
 
 class PoliceUserController {
-  registrationPoliceUser(req, res) {
+  async registrationPoliceUser(req, res) {
     const { email, password } = req.body;
-    userServices.registrationUser(email, password).then((result) => {
-      res.status(200).json(result);
-    });
+    try {
+      await userServices.registrationUser(email, password);
+      const tokens = await userServices.createUserTokens(email);
+      res.status(200).json(tokens);
+    } catch (error) {
+      res.status(409).send(error.message);
+    }
   }
 }
 
