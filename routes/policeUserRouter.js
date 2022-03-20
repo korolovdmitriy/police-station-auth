@@ -19,9 +19,13 @@ const policeUserRouter = express.Router();
  *            password:
  *              type: string
  *              description: User password
+ *            role:
+ *              type: string
+ *              description: User role
  *        example:
  *            email: 1258@gmail.com
  *            password: ehhwetj651he
+ *            role: user
  *      Token:
  *        type: object
  *        required:
@@ -35,7 +39,7 @@ const policeUserRouter = express.Router();
  *              type: string
  *              description: User refresh token
  *        example:
- *            user: {email: 1258@gmail.com, password: ehhwetj651he}
+ *            user: {email: 1258@gmail.com, password: ehhwetj651he, role: user}
  *            refreshToken: jdgjd
  */
 

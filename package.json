@@ -19,11 +19,13 @@
   },
   "homepage": "https://github.com/korolovdmitriy/police-station-auth#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "cassandra-driver": "^4.6.3",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
+    "jsonwebtoken": "^8.5.1",
     "morgan": "^1.10.0",
     "swagger-jsdoc": "^6.1.0",
     "swagger-ui-express": "^4.3.0",
