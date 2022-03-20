@@ -29,18 +29,18 @@ const policeUserRouter = express.Router();
  *      Token:
  *        type: object
  *        required:
- *            - user
+ *            - id
  *            - refreshToken
  *        properties:
- *            user:
- *              type: object
- *              description: User
+ *            id:
+ *              type: uuid
+ *              description: User id
  *            refreshToken:
  *              type: string
  *              description: User refresh token
  *        example:
- *            user: {email: 1258@gmail.com, password: ehhwetj651he, role: user}
- *            refreshToken: jdgjd
+ *            id: a155cac0-a85a-11ec-9fcd-657971076650
+ *            refreshToken: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjEyM0BnbWFpbC5jb20iLCJpYXQiOjE2NDc3ODY3NzQsImV4cCI6MTY1MDM3ODc3NH0.-iI2u4xFIcXOnyc6lM_MlLx1DqHnu27DlIWwkRDPTHc
  */
 
 /**
