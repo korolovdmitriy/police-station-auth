@@ -5,6 +5,11 @@ const policeUserRouter = express.Router();
 /**
  * @swagger
  * components:
+ *   securitySchemes:
+ *     BearerAuth:
+ *      type: http
+ *      scheme: bearer
+ *      bearerFormat: JWT
  *   schemas:
  *      User:
  *        type: object
@@ -55,6 +60,7 @@ const policeUserRouter = express.Router();
  * /policeUser/registration:
  *   post:
  *     summary: Registration user
+ *     security: []
  *     tags: [Auth]
  *     requestBody:
  *       required: true
@@ -64,7 +70,7 @@ const policeUserRouter = express.Router();
  *             $ref: '#/components/schemas/User'
  *     responses:
  *       200:
- *         description: User has been registered *
+ *         description: User has been registered
  *       500:
  *         description: Server error
  */
